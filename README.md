@@ -6,13 +6,14 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
 ## Arquivos
 
 - `index.html`: a pagina (abertura, Nossos espacos, Sobre, Viva essa experiencia, rodape).
-- `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos), Sacramento no manuscrito do
+- `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos), Allison no manuscrito do
   bloco Sobre e um unico acento: o degrade magenta > laranja (anel do selo, tracinhos, linha do rodape).
 - `script.js`: barra com fundo ao rolar, menu do celular, item ativo do menu e entrada em cena dos blocos.
 - `img/heroi.webp` e `img/heroi-cel.webp`: a foto da abertura (a que ela subiu no repositorio), em webp para PC e celular.
-- `img/espaco-*.jpg`, `img/sobre.jpg`, `img/folhas.jpg`: **provisorias**, recortadas do proprio mockup e por isso
-  borradas. Trocar pelas fotos reais mantendo os mesmos nomes (cartoes em 4:3 ou proximo; `sobre.jpg` na horizontal;
-  `folhas.jpg` bem larga e baixa).
+- `img/espaco-*.jpg` e `img/sobre.jpg`: **provisorias**, recortadas do proprio mockup e por isso borradas. Trocar
+  pelas fotos reais mantendo os mesmos nomes (cartoes em 4:3 ou proximo; `sobre.jpg` na horizontal).
+- `img/folhas.jpg`: fundo da faixa "Viva essa experiencia", recortado das palmeiras da foto do header (o recorte do
+  mockup trazia o texto desenhado dentro da imagem). Pode ser trocado por uma foto de folhas bem larga e baixa.
 
 ## O que falta ela passar
 
