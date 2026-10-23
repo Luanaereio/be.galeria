@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habitar Sentidos | BE.GALERIA</title>
+<meta name="description" content="Habitar Sentidos, o encontro da BE.GALERIA para viver o espaço com os cinco sentidos: arte, matéria, aroma, som e sabor no mesmo lugar.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="Habitar Sentidos | BE.GALERIA">
+<meta property="og:description" content="Habitar Sentidos, o encontro da BE.GALERIA para viver o espaço com os cinco sentidos: arte, matéria, aroma, som e sabor no mesmo lugar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/habitar-sentidos.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body class="interna">
+<!-- (23/10) pagina de um dos cinco espacos. (A classe do body NAO pode ser "pagina": e a dos tracinhos do slide, com
+     largura de 36 px, e o corpo inteiro encolhia.) As cinco tem a MESMA estrutura (capa, detalhe, pontos, galeria, proximo
+     espaco, contato, rodape): ao mudar a estrutura numa, mudar nas outras quatro. Os textos sao os primeiros,
+     a confirmar com a cliente. -->
+
+<!-- ================================================================ topo -->
+<header class="topo" id="topo">
+  <a class="marca" href="index.html" aria-label="BE.GALERIA, voltar ao inicio"><b>BE.</b>GALERIA</a>
+  <nav class="menu" id="menu" aria-label="Navegacao principal">
+    <a href="index.html#inicio">Início</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#galeria" class="ativo">Galeria</a>
+    <a href="index.html#servicos">Serviços</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+  <button class="hamburguer" id="menuAbrir" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<main>
+<!-- ================================================================ capa -->
+<section class="capa" id="inicio">
+  <div class="capa-texto">
+    <a class="voltar" href="index.html#galeria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4M11 5l-7 7 7 7"/></svg><span>Nossos espaços</span></a>
+    <p class="rotulo"><span>Nossos espaços</span><i></i><span>04 de 05</span></p>
+    <h1>Habitar<br>Sentidos</h1>
+    <p class="capa-lede">Um encontro para viver o espaço com os cinco sentidos: arte, matéria, aroma, som e sabor no mesmo lugar.</p>
+    <a class="chamada" href="index.html#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Falar com a BE.GALERIA</span></a>
+  </div>
+  <figure class="capa-foto">
+    <img src="img/habitar-sentidos.jpg" alt="Folhas de uma planta sobre parede de mármore" width="628" height="801" fetchpriority="high" decoding="async">
+    <span class="capa-numero" aria-hidden="true">04</span>
+  </figure>
+</section>
+
+<!-- ================================================================ detalhe -->
+<section class="detalhe">
+  <div class="detalhe-grade">
+    <div class="detalhe-frase"><i class="traco" aria-hidden="true"></i><h2>Habitar é sentir antes de entender.</h2></div>
+    <div class="detalhe-texto">
+      <p>Habitar Sentidos é o evento da BE Galeria que convida arquitetos, designers, marcas e convidados a experimentar materiais, obras e ambientes de perto, sem pressa. Cada edição reúne uma curadoria de artistas, fornecedores e parceiros em torno de um tema.</p>
+      <p>Mais do que uma mostra, é um convite a perceber texturas, luz, cheiros e sons como parte do projeto, e a conversar sobre o que faz um lugar ser bom de viver.</p>
+      <dl class="ficha">
+        <div><dt>Formato</dt><dd>Mostra e encontro, com visitas guiadas e conversas.</dd></div>
+        <div><dt>Para quem</dt><dd>Arquitetos, designers, marcas e quem gosta de viver bem.</dd></div>
+        <div><dt>Onde</dt><dd>Casa BE Galeria, São Paulo.</dd></div>
+        <div><dt>Próxima edição</dt><dd>Em breve. Entre em contato para receber o convite.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ pontos -->
+<section class="pontos">
+  <div class="cabeca"><div><p class="rotulo rotulo--so">Os sentidos</p><h2>O que acontece<br>em cada edição</h2></div></div>
+  <div class="pontos-grade">
+    <article class="ponto"><i>01</i><h3>Ver e tocar</h3><p>Obras, pedras, tecidos e madeiras ao alcance da mão.</p></article>
+    <article class="ponto"><i>02</i><h3>Ouvir e sentir</h3><p>Trilha, aromas e luz pensados para cada ambiente.</p></article>
+    <article class="ponto"><i>03</i><h3>Provar</h3><p>Experiências gastronômicas de parceiros convidados.</p></article>
+  </div>
+</section>
+
+<!-- ================================================================ galeria da pagina (mesmo mosaico e visualizador dos bastidores) -->
+<section class="bastidores pagina-galeria" id="imagens">
+  <div class="cabeca">
+    <div><p class="rotulo rotulo--so">Em imagens</p><h2>A edição em imagens</h2></div>
+    <p class="bastidores-nota">Abra qualquer foto para ver em tamanho grande.</p>
+  </div>
+  <div class="mosaico" id="mosaico">
+    <button type="button" class="peca peca--grande" data-legenda="Convidados na escada"><img src="img/heroi-3.webp" alt="Grupo de pessoas conversando numa escada iluminada" loading="lazy" decoding="async" width="1770" height="896"><span class="peca-legenda"><i>01</i>Convidados na escada</span></button>
+    <button type="button" class="peca" data-legenda="Conversa em volta da mesa"><img src="img/bastidores-6.jpg" alt="Equipe reunida em volta de uma mesa de madeira com notebook e cadernos" loading="lazy" decoding="async" width="1147" height="1371"><span class="peca-legenda"><i>02</i>Conversa em volta da mesa</span></button>
+    <button type="button" class="peca" data-legenda="Materiais para tocar"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>03</i>Materiais para tocar</span></button>
+  </div>
+</section>
+
+<dialog class="visor" id="visor" aria-label="Foto em tamanho grande">
+  <button type="button" class="visor-fechar" id="visorFechar" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button type="button" class="visor-seta visor-seta--esq" id="visorAnterior" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure class="visor-figura">
+    <img id="visorImagem" src="" alt="">
+    <figcaption id="visorLegenda"></figcaption>
+  </figure>
+  <button type="button" class="visor-seta visor-seta--dir" id="visorProxima" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
+
+<!-- ================================================================ proximo espaco -->
+<section class="proximo">
+  <a class="proximo-link" href="eventos.html">
+    <img src="img/eventos.jpg" alt="" loading="lazy" decoding="async" width="463" height="783">
+    <div><p class="rotulo rotulo--so">Próximo espaço</p><h2>Eventos &amp; experiências</h2></div>
+    <span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
+  </a>
+</section>
+</main>
+
+<!-- ================================================================ experiencia -->
+<section class="experiencia" id="contato">
+  <img class="experiencia-fundo" src="img/folhas.jpg" alt="" loading="lazy" decoding="async" width="1600" height="480">
+  <div class="experiencia-texto">
+    <p class="rotulo rotulo--so">Viva essa</p>
+    <h2>Experiência</h2>
+  </div>
+  <a class="pilula" href="#rodape">Entre em contato <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<!-- ================================================================ rodape -->
+<footer class="rodape" id="rodape">
+  <a class="marca" href="index.html"><b>BE.</b>GALERIA</a>
+  <nav class="rodape-menu" aria-label="Rodape">
+    <a href="index.html#inicio">Início</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#galeria">Galeria</a>
+    <a href="index.html#servicos">Serviços</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+  <div class="redes">
+    <a href="#" aria-label="Instagram" title="Instagram (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4"/></svg></a>
+    <a href="#" aria-label="YouTube" title="YouTube (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a>
+  </div>
+  <i class="traco traco--rodape" aria-hidden="true"></i>
+  <p class="rodape-lugar">São Paulo - SP</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

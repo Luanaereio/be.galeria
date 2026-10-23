@@ -233,6 +233,61 @@ p { margin: 0; }
 .traco--rodape { width: 120px; height: 1.5px; }
 .rodape-lugar { font-family: var(--display); font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--texto-3); white-space: nowrap; }
 
+/* ============================================================ paginas dos espacos (23/10) */
+/* arquitetura.html, interiores.html, casa.html, habitar-sentidos.html e eventos.html: capa em duas colunas (texto e
+   foto em moldura com o numero grande vazado), detalhe com frase e ficha, tres pontos, galeria de 3 fotos (mesmo
+   mosaico e visualizador dos bastidores) e faixa do proximo espaco. */
+.capa {
+  position: relative; display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(32px, 5vw, 80px); align-items: center;
+  min-height: 100svh;
+  padding: calc(96px + 4vh) var(--margem) clamp(56px, 8vh, 96px);
+  background: var(--onix);
+}
+.capa--larga { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+.capa-texto { max-width: 600px; }
+.voltar { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 36px; font-family: var(--display); font-weight: 500; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--texto-2); transition: color 0.3s; }
+.voltar svg { width: 16px; height: 16px; transition: transform 0.4s var(--suave); }
+.voltar:hover { color: var(--texto); }
+.voltar:hover svg { transform: translateX(-4px); }
+.capa h1 { font-size: clamp(38px, 4.9vw, 70px); color: #fff; text-wrap: initial; }
+.capa-lede { margin: 30px 0 0; max-width: 40ch; font-size: 15px; line-height: 1.7; color: var(--texto-2); }
+.capa-foto { position: relative; margin: 0; width: 100%; aspect-ratio: 3 / 4; max-height: calc(100svh - 200px); justify-self: end; border: 1px solid var(--linha); border-radius: 4px; overflow: hidden; background: var(--carvao); }
+.capa--larga .capa-foto { aspect-ratio: 4 / 3; }
+.capa-foto img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.94); }
+.capa-foto::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 11, 12, 0) 55%, rgba(11, 11, 12, 0.62) 100%); pointer-events: none; }
+.capa-numero { position: absolute; z-index: 1; left: 14px; bottom: -0.2em; font-family: var(--display); font-weight: 300; font-size: clamp(110px, 14vw, 210px); line-height: 1; letter-spacing: -0.02em; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.42); pointer-events: none; }
+
+.detalhe { padding: clamp(64px, 9vh, 110px) var(--margem) clamp(40px, 6vh, 72px); border-top: 1px solid var(--linha); }
+.detalhe-grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: start; }
+.detalhe-frase .traco { margin-bottom: 22px; }
+.detalhe-frase h2 { font-size: clamp(28px, 2.9vw, 40px); max-width: 16ch; }
+.detalhe-texto > p { max-width: 54ch; font-size: 15px; line-height: 1.75; color: var(--texto-2); }
+.detalhe-texto p + p { margin-top: 18px; }
+.ficha { margin: 40px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; border-top: 1px solid var(--linha); }
+.ficha > div { padding: 18px 0; border-bottom: 1px solid var(--linha); }
+.ficha dt { font-family: var(--display); font-weight: 500; font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--texto-3); margin-bottom: 8px; }
+.ficha dd { margin: 0; font-size: 14px; line-height: 1.6; color: var(--texto); }
+
+.pontos { padding: clamp(40px, 6vh, 72px) var(--margem) clamp(56px, 8vh, 96px); }
+.pontos-grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ponto { padding: 28px 24px 30px; border: 1px solid var(--linha); border-radius: 4px; background: var(--carvao); display: grid; gap: 14px; align-content: start; }
+.ponto i { font-style: normal; font-family: var(--display); font-weight: 500; font-size: 11px; letter-spacing: 0.24em; color: var(--laranja); }
+.ponto h3 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 17px; text-transform: uppercase; letter-spacing: 0.04em; }
+.ponto p { font-size: 14px; line-height: 1.7; color: var(--texto-2); }
+
+.pagina-galeria { padding-top: 0; }
+
+.proximo { padding: 0 var(--margem) clamp(64px, 9vh, 110px); }
+.proximo-link { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; min-height: 260px; padding: clamp(32px, 5vw, 64px); border: 1px solid var(--linha); border-radius: 4px; overflow: hidden; isolation: isolate; }
+.proximo-link img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) brightness(0.55); transition: transform 1.4s var(--suave), filter 0.6s; }
+.proximo-link::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(11, 11, 12, 0.86) 0%, rgba(11, 11, 12, 0.5) 55%, rgba(11, 11, 12, 0.3) 100%); }
+.proximo-link h2 { font-size: clamp(30px, 3.4vw, 46px); }
+.proximo-link .chamada-circulo { width: 56px; height: 56px; }
+.proximo-link:hover img { transform: scale(1.04); filter: saturate(1) brightness(0.65); }
+.proximo-link:hover .chamada-circulo { background: var(--texto); color: var(--onix); border-color: var(--texto); transform: translateX(4px); }
+
 /* o que aparece ao rolar */
 .sobe { opacity: 0; transform: translateY(24px); transition: opacity 0.9s var(--suave), transform 0.9s var(--suave); }
 .sobe.visivel { opacity: 1; transform: none; }
@@ -293,6 +348,21 @@ body.travado { overflow: hidden; }   /* menu do celular aberto ou visualizador d
   .sobre { grid-template-columns: 1fr; }
   .sobre-foto img { min-height: 0; aspect-ratio: 4 / 3; height: auto; }
   .sobre-texto { padding: 48px var(--margem) 56px; }
+
+  /* paginas dos espacos: foto primeiro, texto embaixo, tudo em uma coluna */
+  .capa, .capa--larga { grid-template-columns: 1fr; min-height: 0; padding-top: 96px; gap: 28px; }
+  .capa-foto { order: -1; aspect-ratio: 4 / 5; max-height: 62svh; justify-self: stretch; }
+  .capa--larga .capa-foto { aspect-ratio: 4 / 3; }
+  .capa-numero { font-size: clamp(90px, 26vw, 120px); left: 10px; }
+  .capa h1 { font-size: clamp(36px, 10.5vw, 52px); }
+  .capa-lede { margin-top: 22px; }
+  .voltar { margin-bottom: 24px; }
+  .detalhe-grade { grid-template-columns: 1fr; gap: 28px; }
+  .detalhe-frase h2 { max-width: none; }
+  .ficha { grid-template-columns: 1fr; margin-top: 32px; }
+  .pontos-grade { grid-template-columns: 1fr; }
+  .proximo-link { grid-template-columns: minmax(0, 1fr) auto; min-height: 220px; padding: 28px 22px; }
+  .proximo-link .chamada-circulo { width: 48px; height: 48px; }
 
   .experiencia { flex-direction: column; align-items: flex-start; gap: 26px; }
   .rodape { flex-wrap: wrap; gap: 18px 28px; }

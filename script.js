@@ -1,4 +1,4 @@
-/* BE.GALERIA (23/10/2026): o pouco de comportamento da pagina.
+/* BE.GALERIA (23/10/2026): o pouco de comportamento da pagina (vale para a home e para as cinco paginas dos espacos).
    1. a barra ganha fundo depois da abertura;
    2. o menu do celular abre e fecha;
    3. o item do menu acende conforme a secao visivel; 3b. o slide da abertura; 3c. o visualizador dos bastidores;
@@ -139,7 +139,7 @@
   }
 
   /* 4. entrada em cena */
-  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .peca, .experiencia-texto, .pilula');
+  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .peca, .experiencia-texto, .pilula, .capa-texto, .capa-foto, .detalhe-frase, .detalhe-texto, .ponto, .proximo-link');
   Array.prototype.forEach.call(blocos, function (el, i) { el.classList.add('sobe'); el.style.transitionDelay = (i % 5) * 70 + 'ms'; });
   if (calmo || !('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(blocos, function (el) { el.classList.add('visivel'); });
