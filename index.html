@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BE.GALERIA</title>
+<meta name="description" content="BE.GALERIA: mais do que uma galeria, um estilo de vida. Um espaco em Sao Paulo onde arte, cultura, moda, negocios e pessoas se encontram.">
+<meta name="theme-color" content="#0B0B0C">
+<meta property="og:title" content="BE.GALERIA">
+<meta property="og:description" content="Mais do que uma galeria, um estilo de vida. Arte, cultura, moda, negocios e pessoas no mesmo lugar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/heroi.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Inter:wght@400;500&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/heroi.webp" imagesrcset="img/heroi-cel.webp 960w, img/heroi.webp 1778w" imagesizes="100vw">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- ================================================================ topo -->
+<header class="topo" id="topo">
+  <a class="marca" href="#inicio" aria-label="BE.GALERIA, voltar ao inicio"><b>BE.</b>GALERIA</a>
+  <nav class="menu" id="menu" aria-label="Navegacao principal">
+    <a href="#inicio" class="ativo">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <button class="hamburguer" id="menuAbrir" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<!-- ================================================================ abertura -->
+<section class="abertura" id="inicio">
+  <picture class="abertura-foto">
+    <source media="(max-width: 760px)" srcset="img/heroi-cel.webp">
+    <img src="img/heroi.webp" alt="Mulher de vestido preto caminhando num patio com palmeiras e vidro" width="1778" height="896" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="abertura-veu" aria-hidden="true"></div>
+
+  <div class="abertura-texto">
+    <p class="rotulo"><span>Arte</span><i></i><span>Experiência</span><i></i><span>Conexões</span></p>
+    <h1>Mais do que<br>uma galeria,<br>um estilo<br>de vida.</h1>
+    <p class="abertura-lede">A BE.GALERIA é um espaço onde arte, cultura, moda, negócios e pessoas se encontram.</p>
+    <a class="chamada" href="#galeria"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça nossa galeria</span></a>
+  </div>
+
+  <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
+
+  <div class="abertura-paginas" aria-hidden="true"><span>01</span><i class="cheia"></i><span>04</span><i></i></div>
+  <a class="descer" href="#galeria" aria-label="Descer para os espacos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"/></svg></a>
+  <p class="abertura-vertical" aria-hidden="true"><span>Arte que<br>conecta<br>pessoas</span><i></i></p>
+</section>
+
+<!-- ================================================================ espacos -->
+<section class="espacos" id="galeria">
+  <div class="cabeca">
+    <div>
+      <p class="rotulo rotulo--so">Nossos</p>
+      <h2>Espaços</h2>
+    </div>
+    <a class="seta-link" href="#contato">Conheça todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="cartoes">
+    <a class="cartao" href="#contato"><img src="img/espaco-galeria.jpg" alt="" loading="lazy" decoding="async" width="346" height="312"><span class="cartao-pe"><span>Galeria<br>de arte</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span></a>
+    <a class="cartao" href="#contato"><img src="img/espaco-eventos.jpg" alt="" loading="lazy" decoding="async" width="336" height="312"><span class="cartao-pe"><span>Espaços para<br><b>eventos</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span></a>
+    <a class="cartao" href="#contato"><img src="img/espaco-experiencias.jpg" alt="" loading="lazy" decoding="async" width="336" height="312"><span class="cartao-pe"><span>Experiências<br>exclusivas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span></a>
+    <a class="cartao" href="#contato"><img src="img/espaco-networking.jpg" alt="" loading="lazy" decoding="async" width="336" height="312"><span class="cartao-pe"><span>Networking<br><b>&amp; negócios</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span></a>
+    <a class="cartao" href="#contato"><img src="img/espaco-moda.jpg" alt="" loading="lazy" decoding="async" width="336" height="312"><span class="cartao-pe"><span>Moda<br><b>&amp; lifestyle</b></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span></a>
+  </div>
+</section>
+
+<!-- ================================================================ sobre -->
+<section class="sobre" id="sobre">
+  <div class="sobre-foto">
+    <img src="img/sobre.jpg" alt="Interior da galeria visto do jardim, com esculturas e vidro" loading="lazy" decoding="async" width="824" height="744">
+    <p class="manuscrito" aria-hidden="true">Arte,<br>conexões,<br>experiências<br>reais.</p>
+  </div>
+  <div class="sobre-texto">
+    <i class="traco" aria-hidden="true"></i>
+    <p class="rotulo rotulo--so">Sobre a</p>
+    <h2>BE.GALERIA</h2>
+    <p>Somos um espaço contemporâneo, onde a arte ganha vida e as pessoas se encontram para compartilhar ideias, negócios e experiências únicas.</p>
+    <p>Mais do que uma galeria, somos um ponto de encontro para quem valoriza o novo, o autêntico e o extraordinário.</p>
+    <a class="chamada chamada--pequena" href="#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Saiba mais</span></a>
+  </div>
+</section>
+
+<!-- ================================================================ experiencia -->
+<div id="servicos" class="ancora" aria-hidden="true"></div>
+<section class="experiencia" id="contato">
+  <img class="experiencia-fundo" src="img/folhas.jpg" alt="" loading="lazy" decoding="async" width="2048" height="256">
+  <div class="experiencia-texto">
+    <p class="rotulo rotulo--so">Viva essa</p>
+    <h2>Experiência</h2>
+  </div>
+  <a class="pilula" href="#rodape">Entre em contato <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></a>
+</section>
+
+<!-- ================================================================ rodape -->
+<footer class="rodape" id="rodape">
+  <a class="marca" href="#inicio"><b>BE.</b>GALERIA</a>
+  <nav class="rodape-menu" aria-label="Rodape">
+    <a href="#inicio">Início</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <div class="redes">
+    <a href="#" aria-label="Instagram" title="Instagram (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg></a>
+    <a href="#" aria-label="LinkedIn" title="LinkedIn (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.5M12 17v-4a2 2 0 0 1 4 0v4"/></svg></a>
+    <a href="#" aria-label="YouTube" title="YouTube (em breve)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg></a>
+  </div>
+  <i class="traco traco--rodape" aria-hidden="true"></i>
+  <p class="rodape-lugar">São Paulo - SP</p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
