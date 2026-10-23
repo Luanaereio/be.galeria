@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/heroi.webp" imagesrcset="img/heroi-cel.webp 960w, img/heroi.webp 1778w" imagesizes="100vw">
+<link rel="preload" as="image" href="img/heroi.webp" imagesrcset="img/heroi-cel.webp 960w, img/heroi.webp 1768w" imagesizes="100vw">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -33,23 +33,61 @@
 </header>
 
 <!-- ================================================================ abertura -->
-<section class="abertura" id="inicio">
-  <picture class="abertura-foto">
-    <source media="(max-width: 760px)" srcset="img/heroi-cel.webp">
-    <img src="img/heroi.webp" alt="Mulher de vestido preto caminhando num patio com palmeiras e vidro" width="1778" height="896" fetchpriority="high" decoding="async">
-  </picture>
-  <div class="abertura-veu" aria-hidden="true"></div>
-
-  <div class="abertura-texto">
-    <p class="rotulo"><span>Arte</span><i></i><span>Experiência</span><i></i><span>Conexões</span></p>
-    <h1>Mais do que<br>uma galeria,<br>um estilo<br>de vida.</h1>
-    <p class="abertura-lede">A BE.GALERIA é um espaço onde arte, cultura, moda, negócios e pessoas se encontram.</p>
-    <a class="chamada" href="#galeria"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça nossa galeria</span></a>
+<!-- (23/10) a abertura e um slide com as tres fotos dela, cada uma com o proprio texto. Troca sozinho a cada 6,5 s,
+     para quando o mouse esta em cima, e os tracinhos de "01 - 03" levam direto a cada foto. -->
+<section class="abertura" id="inicio" aria-roledescription="carrossel" aria-label="Destaques da BE.GALERIA">
+  <div class="slide ativo" data-slide="1" role="group" aria-roledescription="slide" aria-label="1 de 3">
+    <picture class="abertura-foto">
+      <source media="(max-width: 760px)" srcset="img/heroi-cel.webp">
+      <img src="img/heroi.webp" alt="Mulher de vestido preto caminhando num patio com palmeiras e vidro" width="1768" height="889" fetchpriority="high" decoding="async">
+    </picture>
+    <div class="abertura-veu" aria-hidden="true"></div>
+    <div class="abertura-texto">
+      <p class="rotulo"><span>Arte</span><i></i><span>Experiência</span><i></i><span>Conexões</span></p>
+      <h1>Mais do que<br>uma galeria,<br>um estilo<br>de vida.</h1>
+      <p class="abertura-lede">A BE.GALERIA é um espaço onde arte, cultura, moda, negócios e pessoas se encontram.</p>
+      <a class="chamada" href="#galeria"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça nossa galeria</span></a>
+    </div>
+    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
   </div>
 
-  <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
+  <div class="slide claro" data-slide="2" role="group" aria-roledescription="slide" aria-label="2 de 3" aria-hidden="true">
+    <picture class="abertura-foto">
+      <source media="(max-width: 760px)" srcset="img/heroi-2-cel.webp">
+      <img src="img/heroi-2.webp" alt="Dois profissionais olhando um projeto num tablet, num interior claro e iluminado" width="1770" height="896" loading="lazy" decoding="async">
+    </picture>
+    <div class="abertura-veu" aria-hidden="true"></div>
+    <div class="abertura-texto">
+      <p class="rotulo"><span>Arquitetura</span><i></i><span>Interiores</span><i></i><span>Projeto</span></p>
+      <p class="h1">Projetos que<br>traduzem<br>quem você é.</p>
+      <p class="abertura-lede">Da planta ao detalhe final, criamos espaços com identidade, pensados para o jeito de viver de cada cliente.</p>
+      <a class="chamada" href="#galeria" tabindex="-1"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça os projetos</span></a>
+    </div>
+    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
+  </div>
 
-  <div class="abertura-paginas" aria-hidden="true"><span>01</span><i class="cheia"></i><span>04</span><i></i></div>
+  <div class="slide claro" data-slide="3" role="group" aria-roledescription="slide" aria-label="3 de 3" aria-hidden="true">
+    <picture class="abertura-foto">
+      <source media="(max-width: 760px)" srcset="img/heroi-3-cel.webp">
+      <img src="img/heroi-3.webp" alt="Grupo de pessoas conversando numa escada iluminada, em tons claros" width="1770" height="896" loading="lazy" decoding="async">
+    </picture>
+    <div class="abertura-veu" aria-hidden="true"></div>
+    <div class="abertura-texto">
+      <p class="rotulo"><span>Encontros</span><i></i><span>Cultura</span><i></i><span>Comunidade</span></p>
+      <p class="h1">Onde pessoas<br>e ideias<br>se encontram.</p>
+      <p class="abertura-lede">Eventos, experiências e conversas que aproximam quem cria, quem vive e quem inspira.</p>
+      <a class="chamada" href="#contato" tabindex="-1"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Viva a experiência</span></a>
+    </div>
+    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
+  </div>
+
+  <div class="abertura-paginas" id="paginas" role="tablist" aria-label="Escolher o destaque">
+    <span class="paginas-atual" id="paginaAtual">01</span>
+    <button type="button" class="pagina cheia" role="tab" aria-selected="true" aria-label="Destaque 1"></button>
+    <button type="button" class="pagina" role="tab" aria-selected="false" aria-label="Destaque 2"></button>
+    <button type="button" class="pagina" role="tab" aria-selected="false" aria-label="Destaque 3"></button>
+    <span>03</span>
+  </div>
   <a class="descer" href="#galeria" aria-label="Descer para os espacos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10l6 6 6-6"/></svg></a>
   <p class="abertura-vertical" aria-hidden="true"><span>Arte que<br>conecta<br>pessoas</span><i></i></p>
 </section>

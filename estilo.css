@@ -73,26 +73,47 @@ p { margin: 0; }
 .hamburguer[aria-expanded="true"] span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
 
 /* ============================================================ abertura */
+/* (23/10) slide com as tres fotos: cada .slide ocupa a abertura inteira (foto, veu, texto e selo) e some ou aparece
+   em fundido; a abertura em si so da a altura e guarda os tracinhos, a seta e o texto vertical, que sao de todas. */
 .abertura {
   position: relative;
   min-height: 100svh;
-  display: grid;
-  align-content: center;
-  padding: calc(96px + 4vh) var(--margem) 120px;
   overflow: hidden;
   isolation: isolate;
 }
+.slide {
+  position: absolute; inset: 0;
+  display: grid;
+  align-content: center;
+  padding: calc(96px + 4vh) var(--margem) 120px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.4s var(--suave), visibility 0s linear 1.4s;
+}
+.slide.ativo { opacity: 1; visibility: visible; transition-delay: 0s; z-index: 1; }
 .abertura-foto { position: absolute; inset: 0; z-index: -2; }
-.abertura-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; }
+.abertura-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 40%; transform: scale(1.06); transition: transform 7s linear; }
+.slide.ativo .abertura-foto img { transform: scale(1); }
 .abertura-veu {
   position: absolute; inset: 0; z-index: -1;
   background:
     linear-gradient(90deg, rgba(11, 11, 12, 0.88) 0%, rgba(11, 11, 12, 0.62) 38%, rgba(11, 11, 12, 0.18) 68%, rgba(11, 11, 12, 0.3) 100%),
     linear-gradient(180deg, rgba(11, 11, 12, 0.55) 0%, rgba(11, 11, 12, 0) 30%, rgba(11, 11, 12, 0.15) 75%, rgba(11, 11, 12, 0.92) 100%);
 }
-.abertura-texto { max-width: 560px; }
-.abertura h1 { font-size: clamp(38px, 4.9vw, 70px); font-weight: 300; color: #fff; }
-.abertura-lede { margin: 30px 0 0; max-width: 36ch; font-size: 14.5px; line-height: 1.7; color: var(--texto-2); }
+/* as fotos claras (bege) pedem um veu mais forte para o texto branco ler bem */
+.slide.claro .abertura-veu {
+  background:
+    linear-gradient(90deg, rgba(11, 11, 12, 0.94) 0%, rgba(11, 11, 12, 0.78) 36%, rgba(11, 11, 12, 0.34) 66%, rgba(11, 11, 12, 0.42) 100%),
+    linear-gradient(180deg, rgba(11, 11, 12, 0.6) 0%, rgba(11, 11, 12, 0.1) 30%, rgba(11, 11, 12, 0.25) 75%, rgba(11, 11, 12, 0.94) 100%);
+}
+.slide[data-slide="2"] .abertura-foto img { object-position: 70% 40%; }
+.slide[data-slide="3"] .abertura-foto img { object-position: 72% 50%; }
+/* o texto entra de baixo quando o slide aparece */
+.abertura-texto { max-width: 640px; opacity: 0; transform: translateY(26px); transition: opacity 1s var(--suave) 0.3s, transform 1s var(--suave) 0.3s; }
+.slide.ativo .abertura-texto { opacity: 1; transform: none; }
+/* as quebras dos titulos da abertura sao escritas a mao (<br>): sem text-wrap balance, que repartia "se / encontram" */
+.abertura h1, .abertura .h1 { margin: 0; font-family: var(--display); font-size: clamp(38px, 4.9vw, 70px); font-weight: 300; line-height: 1.02; letter-spacing: 0.01em; text-transform: uppercase; color: #fff; text-wrap: initial; }
+.abertura-lede { margin: 30px 0 0; max-width: 38ch; font-size: 14.5px; line-height: 1.7; color: var(--texto-2); }
 
 .chamada { display: inline-flex; align-items: center; gap: 18px; margin-top: 42px; font-family: var(--display); font-weight: 500; font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--texto); }
 .chamada-circulo { width: 48px; height: 48px; border: 1px solid var(--linha-forte); border-radius: 50%; display: grid; place-items: center; transition: background 0.4s, border-color 0.4s, transform 0.4s var(--suave); }
@@ -119,9 +140,13 @@ p { margin: 0; }
 .selo-miolo b { font-weight: 600; }
 @keyframes girar { to { transform: rotate(360deg); } }
 
-.abertura-paginas { position: absolute; left: var(--margem); bottom: 52px; display: flex; align-items: center; gap: 12px; font-family: var(--display); font-size: 11px; letter-spacing: 0.12em; color: var(--texto-2); }
-.abertura-paginas i { width: 36px; height: 1px; background: var(--linha-forte); }
-.abertura-paginas i.cheia { background: var(--texto); }
+.abertura-paginas { position: absolute; left: var(--margem); bottom: 52px; z-index: 2; display: flex; align-items: center; gap: 12px; font-family: var(--display); font-size: 11px; letter-spacing: 0.12em; color: var(--texto-2); }
+.paginas-atual { color: var(--texto); min-width: 2ch; }
+.pagina { width: 36px; height: 14px; padding: 0; border: 0; background: transparent; cursor: pointer; position: relative; }
+.pagina::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--linha-forte); transition: background 0.4s, transform 0.4s var(--suave); }
+.pagina:hover::before { background: var(--texto-2); }
+.pagina.cheia::before { background: var(--texto); transform: scaleY(1.5); }
+.descer, .abertura-vertical { z-index: 2; }
 .descer { position: absolute; left: 50%; bottom: 44px; transform: translateX(-50%); width: 40px; height: 40px; border: 1px solid var(--linha-forte); border-radius: 12px; display: grid; place-items: center; color: var(--texto); animation: flutuar 2.6s ease-in-out infinite; }
 .descer svg { width: 18px; height: 18px; }
 @keyframes flutuar { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 6px); } }
@@ -211,13 +236,15 @@ p { margin: 0; }
   .menu.aberto a::after { display: none; }
   body.travado { overflow: hidden; }
 
-  .abertura { padding-top: 120px; padding-bottom: 150px; align-content: end; }
+  .slide { padding-top: 120px; padding-bottom: 150px; align-content: end; }
   .abertura-foto img { object-position: 66% 30%; }
-  .abertura-veu { background: linear-gradient(180deg, rgba(11, 11, 12, 0.5) 0%, rgba(11, 11, 12, 0.25) 35%, rgba(11, 11, 12, 0.78) 62%, rgba(11, 11, 12, 0.96) 100%); }
-  .abertura h1 { font-size: clamp(36px, 10.5vw, 52px); }
+  .slide[data-slide="2"] .abertura-foto img { object-position: 72% 30%; }
+  .slide[data-slide="3"] .abertura-foto img { object-position: 70% 40%; }
+  .abertura-veu, .slide.claro .abertura-veu { background: linear-gradient(180deg, rgba(11, 11, 12, 0.5) 0%, rgba(11, 11, 12, 0.25) 35%, rgba(11, 11, 12, 0.8) 62%, rgba(11, 11, 12, 0.97) 100%); }
+  .abertura h1, .abertura .h1 { font-size: clamp(36px, 10.5vw, 52px); }
   .abertura-lede { margin-top: 22px; font-size: 15px; }
   .chamada { margin-top: 30px; }
-  .selo { position: relative; right: auto; top: auto; transform: none; width: 120px; margin: 36px 0 0; order: 3; }
+  .selo { position: relative; right: auto; top: auto; transform: none; width: 120px; margin: 36px 0 0; }
   .selo-miolo { font-size: 13px; }
   .abertura-vertical { display: none; }
   .descer { display: none; }
@@ -246,5 +273,7 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .selo-anel, .descer { animation: none; }
   .sobe { opacity: 1; transform: none; transition: none; }
-  * { transition-duration: 0.01ms !important; }
+  .abertura-foto img { transform: none; }
+  .abertura-texto { opacity: 1; transform: none; }
+  * { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
 }

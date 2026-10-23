@@ -9,7 +9,9 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
 - `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos) e um unico acento: o degrade
   magenta > laranja (anel do selo, tracinhos, linha do rodape). O manuscrito do bloco Sobre esta gravado na foto.
 - `script.js`: barra com fundo ao rolar, menu do celular, item ativo do menu e entrada em cena dos blocos.
-- `img/heroi.webp` e `img/heroi-cel.webp`: a foto da abertura (a que ela subiu no repositorio), em webp para PC e celular.
+- `img/heroi.webp`, `img/heroi-2.webp`, `img/heroi-3.webp` (e as `-cel.webp` para celular): as tres fotos da abertura,
+  que e um slide (troca a cada 6,5 s, para com o mouse em cima, tracinhos clicaveis, arrastar no celular). Cada foto
+  tem o proprio texto no `index.html`.
 - Cartoes de "Nossos espacos" (23/10): Projetos de arquitetura (`img/arquitetura.jpg`), Design de interiores
   (`img/interiores.jpg`), Casa BE Galeria (`img/casa.jpg`), Habitar Sentidos (`img/habitar-sentidos.jpg`) e Eventos &
   experiencias (`img/eventos.jpg`). As fotos sao as reais, mandadas por ela em 23/10 (JPEG no tamanho original,
