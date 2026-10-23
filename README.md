@@ -15,8 +15,10 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
   que entra palavra por palavra, mais um trilho vertical com os cinco espacos; letreiro que corre com os temas;
   manifesto com uma foto presa ao fundo (sticky) enquanto a frase (destaque em degrade) e o texto passam por cima;
   indice em linhas finas (4 itens); momentos numa trilha horizontal que arrasta com o mouse e rola com o dedo (3 com
-  foto + um convite para conversar), com barra de progresso; colagem de 3 fotos sobrepostas com legenda vertical,
-  que no celular vira um lookbook deslizante, abrindo no mesmo visualizador dos bastidores; proximo espaco em tela
+  foto + um convite para conversar), com barra de progresso; parede de galeria com 3 fotos menores penduradas em
+  alturas diferentes, sem se tocar, cada uma com um filete a 10 px e a legenda embaixo (a colagem sobreposta foi
+  rejeitada: "uma em cima da outra e muito grandes"), que no celular vira um lookbook deslizante, abrindo no mesmo
+  visualizador dos bastidores; proximo espaco em tela
   cheia (em circulo: a 5a volta para a 1a); linha com os cinco espacos; faixa de contato e rodape. No celular a
   capa e a foto em tela cheia com o texto embaixo e o numero cortado no canto direito. O menu aponta para
   `index.html#...` com "Galeria" aceso. A classe do `body` e `interna` (nao pode ser `pagina`, que e a dos tracinhos
