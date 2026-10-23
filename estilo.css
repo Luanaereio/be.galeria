@@ -140,7 +140,7 @@ p { margin: 0; }
 
 .cartoes { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .cartao { position: relative; display: grid; grid-template-rows: 1fr auto; background: var(--carvao); border: 1px solid var(--linha); border-radius: 4px; overflow: hidden; transition: transform 0.5s var(--suave), border-color 0.4s; }
-.cartao img { width: 100%; aspect-ratio: 170 / 156; object-fit: cover; filter: saturate(0.92) contrast(1.02); transition: transform 0.8s var(--suave), filter 0.5s; }
+.cartao img { width: 100%; height: auto; aspect-ratio: 170 / 156; object-fit: cover; filter: saturate(0.92) contrast(1.02); transition: transform 0.8s var(--suave), filter 0.5s; } /* height auto: senao o atributo height da tag manda e os cartoes ficam de alturas diferentes */
 .cartao-pe { display: flex; align-items: flex-end; justify-content: space-between; gap: 10px; padding: 16px 16px 18px; font-family: var(--display); font-weight: 300; font-size: 14px; line-height: 1.25; text-transform: uppercase; letter-spacing: 0.02em; color: var(--texto-2); }
 .cartao-pe b { font-weight: 400; color: var(--texto); }
 .cartao-pe svg { width: 16px; height: 16px; flex: none; color: var(--texto-2); margin-bottom: 2px; transition: transform 0.4s var(--suave), color 0.3s; }
