@@ -10,11 +10,17 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
   numerada ao passar o mouse (sempre visivel no toque) e visualizador em tamanho grande (`<dialog>`, setas, teclado e
   arrastar). As legendas estao no `data-legenda` de cada peca.
 - `arquitetura.html`, `interiores.html`, `casa.html`, `habitar-sentidos.html`, `eventos.html` (23/10): a pagina de
-  cada cartao de "Nossos espacos". As cinco tem a MESMA estrutura: capa em duas colunas (texto e a foto do cartao
-  numa moldura com o numero grande vazado), bloco de detalhe (frase, dois paragrafos e ficha de 4 itens), tres pontos
-  numerados, galeria de 3 fotos (mesmo mosaico e visualizador dos bastidores), faixa "Proximo espaco" (em circulo:
-  a 5a volta para a 1a), faixa de contato e rodape. O menu delas aponta para `index.html#...` e "Galeria" fica
-  aceso. Os textos sao os primeiros, escritos a partir do que o site ja dizia: confirmar com a cliente (em
+  cada cartao de "Nossos espacos", em formato de editorial. As cinco tem a MESMA estrutura (ao mudar uma, mudar as
+  outras quatro): capa com a foto do cartao sangrando ate a borda direita e o numero gigante vazado atras do titulo,
+  que entra palavra por palavra, mais um trilho vertical com os cinco espacos; letreiro que corre com os temas;
+  manifesto com uma foto presa ao fundo (sticky) enquanto a frase (destaque em degrade) e o texto passam por cima;
+  indice em linhas finas (4 itens); momentos numa trilha horizontal que arrasta com o mouse e rola com o dedo (3 com
+  foto + um convite para conversar), com barra de progresso; colagem de 3 fotos sobrepostas com legenda vertical,
+  que no celular vira um lookbook deslizante, abrindo no mesmo visualizador dos bastidores; proximo espaco em tela
+  cheia (em circulo: a 5a volta para a 1a); linha com os cinco espacos; faixa de contato e rodape. No celular a
+  capa e a foto em tela cheia com o texto embaixo e o numero cortado no canto direito. O menu aponta para
+  `index.html#...` com "Galeria" aceso. A classe do `body` e `interna` (nao pode ser `pagina`, que e a dos tracinhos
+  do slide). Os textos sao os primeiros, escritos a partir do que o site ja dizia: confirmar com a cliente (em
   especial nomes de projetos, formatos de evento e a frase "ja recebeu lancamentos").
 - `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos) e um unico acento: o degrade
   magenta > laranja (tracinhos, numeros das legendas, linha do rodape). O manuscrito do bloco Sobre esta gravado na

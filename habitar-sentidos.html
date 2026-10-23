@@ -14,13 +14,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/habitar-sentidos.jpg">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="interna">
-<!-- (23/10) pagina de um dos cinco espacos. (A classe do body NAO pode ser "pagina": e a dos tracinhos do slide, com
-     largura de 36 px, e o corpo inteiro encolhia.) As cinco tem a MESMA estrutura (capa, detalhe, pontos, galeria, proximo
-     espaco, contato, rodape): ao mudar a estrutura numa, mudar nas outras quatro. Os textos sao os primeiros,
-     a confirmar com a cliente. -->
+<!-- (23/10) pagina de um dos cinco espacos, 2a versao (editorial). As cinco tem a MESMA estrutura: capa, letreiro,
+     manifesto, indice, momentos, colagem, proximo espaco, outros espacos, contato e rodape. Ao mudar a estrutura
+     numa, mudar nas outras quatro. Os textos sao os primeiros, a confirmar com a cliente.
+     (A classe do body NAO pode ser "pagina": e a dos tracinhos do slide, com largura de 36 px.) -->
 
 <!-- ================================================================ topo -->
 <header class="topo" id="topo">
@@ -37,58 +38,80 @@
 
 <main>
 <!-- ================================================================ capa -->
-<section class="capa" id="inicio">
-  <div class="capa-texto">
+<section class="capa2" id="inicio">
+  <div class="capa2-texto">
     <a class="voltar" href="index.html#galeria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4M11 5l-7 7 7 7"/></svg><span>Nossos espaços</span></a>
     <p class="rotulo"><span>Nossos espaços</span><i></i><span>04 de 05</span></p>
-    <h1>Habitar<br>Sentidos</h1>
-    <p class="capa-lede">Um encontro para viver o espaço com os cinco sentidos: arte, matéria, aroma, som e sabor no mesmo lugar.</p>
+    <h1 class="palavras"><span style="--i:0">Habitar</span><br><span style="--i:1">Sentidos</span></h1>
+    <p class="capa2-lede">Um encontro para viver o espaço com os cinco sentidos: arte, matéria, aroma, som e sabor no mesmo lugar.</p>
     <a class="chamada" href="index.html#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Falar com a BE.GALERIA</span></a>
   </div>
-  <figure class="capa-foto">
-    <img src="img/habitar-sentidos.jpg" alt="Folhas de uma planta sobre parede de mármore" width="628" height="801" fetchpriority="high" decoding="async">
-    <span class="capa-numero" aria-hidden="true">04</span>
-  </figure>
+  <span class="capa2-numero" aria-hidden="true">04</span>
+  <div class="capa2-foto"><img src="img/habitar-sentidos.jpg" alt="Folhas de uma planta sobre parede de mármore" width="628" height="801" fetchpriority="high" decoding="async"></div>
+  <nav class="trilho" aria-label="Os cinco espaços">
+    <a href="arquitetura.html"><span>Arquitetura</span><i>01</i></a>
+    <a href="interiores.html"><span>Interiores</span><i>02</i></a>
+    <a href="casa.html"><span>Casa</span><i>03</i></a>
+    <a href="habitar-sentidos.html" class="ativo" aria-current="page"><span>Habitar Sentidos</span><i>04</i></a>
+    <a href="eventos.html"><span>Eventos</span><i>05</i></a>
+  </nav>
 </section>
 
-<!-- ================================================================ detalhe -->
-<section class="detalhe">
-  <div class="detalhe-grade">
-    <div class="detalhe-frase"><i class="traco" aria-hidden="true"></i><h2>Habitar é sentir antes de entender.</h2></div>
-    <div class="detalhe-texto">
+<!-- ================================================================ letreiro -->
+<div class="letreiro" aria-hidden="true"><div class="letreiro-faixa"><span>Ver</span><i></i><span>Tocar</span><i></i><span>Ouvir</span><i></i><span>Sentir</span><i></i><span>Provar</span><i></i><span>Habitar</span><i></i><span>Sentidos</span><i></i><span>Ver</span><i></i><span>Tocar</span><i></i><span>Ouvir</span><i></i><span>Sentir</span><i></i><span>Provar</span><i></i><span>Habitar</span><i></i><span>Sentidos</span><i></i></div></div>
+
+<!-- ================================================================ manifesto (foto presa, texto por cima) -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-fundo"><img src="img/bastidores-6.jpg" alt="" loading="lazy" decoding="async" width="1147" height="1371"></div>
+  <div class="manifesto-corpo">
+    <p class="rotulo rotulo--so">O encontro</p>
+    <h2 class="manifesto-frase">Habitar é sentir <em>antes de entender.</em></h2>
+    <div class="manifesto-colunas">
       <p>Habitar Sentidos é o evento da BE Galeria que convida arquitetos, designers, marcas e convidados a experimentar materiais, obras e ambientes de perto, sem pressa. Cada edição reúne uma curadoria de artistas, fornecedores e parceiros em torno de um tema.</p>
       <p>Mais do que uma mostra, é um convite a perceber texturas, luz, cheiros e sons como parte do projeto, e a conversar sobre o que faz um lugar ser bom de viver.</p>
-      <dl class="ficha">
-        <div><dt>Formato</dt><dd>Mostra e encontro, com visitas guiadas e conversas.</dd></div>
-        <div><dt>Para quem</dt><dd>Arquitetos, designers, marcas e quem gosta de viver bem.</dd></div>
-        <div><dt>Onde</dt><dd>Casa BE Galeria, São Paulo.</dd></div>
-        <div><dt>Próxima edição</dt><dd>Em breve. Entre em contato para receber o convite.</dd></div>
-      </dl>
     </div>
   </div>
 </section>
 
-<!-- ================================================================ pontos -->
-<section class="pontos">
-  <div class="cabeca"><div><p class="rotulo rotulo--so">Os sentidos</p><h2>O que acontece<br>em cada edição</h2></div></div>
-  <div class="pontos-grade">
-    <article class="ponto"><i>01</i><h3>Ver e tocar</h3><p>Obras, pedras, tecidos e madeiras ao alcance da mão.</p></article>
-    <article class="ponto"><i>02</i><h3>Ouvir e sentir</h3><p>Trilha, aromas e luz pensados para cada ambiente.</p></article>
-    <article class="ponto"><i>03</i><h3>Provar</h3><p>Experiências gastronômicas de parceiros convidados.</p></article>
-  </div>
+<!-- ================================================================ indice -->
+<section class="indice">
+  <div class="cabeca"><div><p class="rotulo rotulo--so">Em resumo</p><h2>O essencial</h2></div></div>
+  <ol class="indice-lista">
+    <li><i>01</i><b>Formato</b><span>Mostra e encontro, com visitas guiadas e conversas.</span></li>
+    <li><i>02</i><b>Para quem</b><span>Arquitetos, designers, marcas e quem gosta de viver bem.</span></li>
+    <li><i>03</i><b>Onde</b><span>Casa BE Galeria, São Paulo.</span></li>
+    <li><i>04</i><b>Próxima edição</b><span>Em breve. Entre em contato para receber o convite.</span></li>
+  </ol>
 </section>
 
-<!-- ================================================================ galeria da pagina (mesmo mosaico e visualizador dos bastidores) -->
+<!-- ================================================================ momentos (trilha horizontal) -->
+<section class="momentos">
+  <div class="cabeca">
+    <div><p class="rotulo rotulo--so">Os sentidos</p><h2>O que acontece<br>em cada edição</h2></div>
+    <p class="dica">Arraste para o lado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></p>
+  </div>
+  <div class="trilha" id="trilha">
+    <article class="momento"><img src="img/habitar-sentidos.jpg" alt="" loading="lazy" decoding="async" width="628" height="801"><i>01</i><h3>Ver e tocar</h3><p>Obras, pedras, tecidos e madeiras ao alcance da mão.</p></article>
+    <article class="momento"><img src="img/heroi-3.webp" alt="" loading="lazy" decoding="async" width="1770" height="896"><i>02</i><h3>Ouvir e sentir</h3><p>Trilha, aromas e luz pensados para cada ambiente.</p></article>
+    <article class="momento"><img src="img/bastidores-4.jpg" alt="" loading="lazy" decoding="async" width="1433" height="1098"><i>03</i><h3>Provar</h3><p>Experiências gastronômicas de parceiros convidados.</p></article>
+    <article class="momento momento--fim"><i>Vamos conversar</i><h3>Quer receber o convite?</h3><p>Deixe o seu contato e avisamos quando a próxima edição tiver data.</p><a class="chamada chamada--pequena" href="index.html#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Falar com a BE.GALERIA</span></a></article>
+  </div>
+  <div class="trilha-barra" aria-hidden="true"><i></i></div>
+</section>
+
+<!-- ================================================================ colagem (mesmo visualizador dos bastidores) -->
 <section class="bastidores pagina-galeria" id="imagens">
   <div class="cabeca">
     <div><p class="rotulo rotulo--so">Em imagens</p><h2>A edição em imagens</h2></div>
     <p class="bastidores-nota">Abra qualquer foto para ver em tamanho grande.</p>
   </div>
-  <div class="mosaico" id="mosaico">
-    <button type="button" class="peca peca--grande" data-legenda="Convidados na escada"><img src="img/heroi-3.webp" alt="Grupo de pessoas conversando numa escada iluminada" loading="lazy" decoding="async" width="1770" height="896"><span class="peca-legenda"><i>01</i>Convidados na escada</span></button>
-    <button type="button" class="peca" data-legenda="Conversa em volta da mesa"><img src="img/bastidores-6.jpg" alt="Equipe reunida em volta de uma mesa de madeira com notebook e cadernos" loading="lazy" decoding="async" width="1147" height="1371"><span class="peca-legenda"><i>02</i>Conversa em volta da mesa</span></button>
-    <button type="button" class="peca" data-legenda="Materiais para tocar"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>03</i>Materiais para tocar</span></button>
+  <div class="colagem" id="mosaico">
+    <button type="button" class="peca colagem-a" data-legenda="Convidados na escada"><img src="img/heroi-3.webp" alt="Grupo de pessoas conversando numa escada iluminada" loading="lazy" decoding="async" width="1770" height="896"><span class="peca-legenda"><i>01</i>Convidados na escada</span></button>
+    <button type="button" class="peca colagem-b" data-legenda="Brinde entre convidados"><img src="img/bastidores-4.jpg" alt="Convidados brindando com espumante num salão de design" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>02</i>Brinde entre convidados</span></button>
+    <button type="button" class="peca colagem-c" data-legenda="Materiais para tocar"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>03</i>Materiais para tocar</span></button>
+    <p class="colagem-vertical" aria-hidden="true">A edição em imagens</p>
   </div>
+  <div class="trilha-barra" aria-hidden="true"><i></i></div>
 </section>
 
 <dialog class="visor" id="visor" aria-label="Foto em tamanho grande">
@@ -102,13 +125,24 @@
 </dialog>
 
 <!-- ================================================================ proximo espaco -->
-<section class="proximo">
-  <a class="proximo-link" href="eventos.html">
+<section class="proximo2">
+  <a href="eventos.html" aria-label="Próximo espaço: Eventos &amp; experiências">
     <img src="img/eventos.jpg" alt="" loading="lazy" decoding="async" width="463" height="783">
-    <div><p class="rotulo rotulo--so">Próximo espaço</p><h2>Eventos &amp; experiências</h2></div>
-    <span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
+    <span class="proximo2-numero" aria-hidden="true">05</span>
+    <div>
+      <p class="rotulo rotulo--so">Próximo espaço</p>
+      <h2>Eventos &amp; experiências</h2>
+      <span class="chamada"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Abrir</span></span>
+    </div>
   </a>
 </section>
+<nav class="outros" aria-label="Todos os espaços">
+  <a href="arquitetura.html"><i>01</i>Projetos de arquitetura</a>
+  <a href="interiores.html"><i>02</i>Design de interiores</a>
+  <a href="casa.html"><i>03</i>Casa BE Galeria</a>
+  <a href="habitar-sentidos.html" class="ativo" aria-current="page"><i>04</i>Habitar Sentidos</a>
+  <a href="eventos.html"><i>05</i>Eventos &amp; experiências</a>
+</nav>
 </main>
 
 <!-- ================================================================ experiencia -->

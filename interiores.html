@@ -14,13 +14,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/interiores.jpg">
 <link rel="stylesheet" href="estilo.css">
 </head>
 <body class="interna">
-<!-- (23/10) pagina de um dos cinco espacos. (A classe do body NAO pode ser "pagina": e a dos tracinhos do slide, com
-     largura de 36 px, e o corpo inteiro encolhia.) As cinco tem a MESMA estrutura (capa, detalhe, pontos, galeria, proximo
-     espaco, contato, rodape): ao mudar a estrutura numa, mudar nas outras quatro. Os textos sao os primeiros,
-     a confirmar com a cliente. -->
+<!-- (23/10) pagina de um dos cinco espacos, 2a versao (editorial). As cinco tem a MESMA estrutura: capa, letreiro,
+     manifesto, indice, momentos, colagem, proximo espaco, outros espacos, contato e rodape. Ao mudar a estrutura
+     numa, mudar nas outras quatro. Os textos sao os primeiros, a confirmar com a cliente.
+     (A classe do body NAO pode ser "pagina": e a dos tracinhos do slide, com largura de 36 px.) -->
 
 <!-- ================================================================ topo -->
 <header class="topo" id="topo">
@@ -37,58 +38,80 @@
 
 <main>
 <!-- ================================================================ capa -->
-<section class="capa" id="inicio">
-  <div class="capa-texto">
+<section class="capa2" id="inicio">
+  <div class="capa2-texto">
     <a class="voltar" href="index.html#galeria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12H4M11 5l-7 7 7 7"/></svg><span>Nossos espaços</span></a>
     <p class="rotulo"><span>Nossos espaços</span><i></i><span>02 de 05</span></p>
-    <h1>Design de<br>interiores</h1>
-    <p class="capa-lede">Mobiliário, materiais e luz escolhidos a dedo para que cada ambiente tenha a sua personalidade.</p>
+    <h1 class="palavras"><span style="--i:0">Design</span> <span style="--i:1">de</span><br><span style="--i:2">interiores</span></h1>
+    <p class="capa2-lede">Mobiliário, materiais e luz escolhidos a dedo para que cada ambiente tenha a sua personalidade.</p>
     <a class="chamada" href="index.html#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Falar com a BE.GALERIA</span></a>
   </div>
-  <figure class="capa-foto">
-    <img src="img/interiores.jpg" alt="Mão escolhendo amostras de materiais" width="672" height="816" fetchpriority="high" decoding="async">
-    <span class="capa-numero" aria-hidden="true">02</span>
-  </figure>
+  <span class="capa2-numero" aria-hidden="true">02</span>
+  <div class="capa2-foto"><img src="img/interiores.jpg" alt="Mão escolhendo amostras de materiais" width="672" height="816" fetchpriority="high" decoding="async"></div>
+  <nav class="trilho" aria-label="Os cinco espaços">
+    <a href="arquitetura.html"><span>Arquitetura</span><i>01</i></a>
+    <a href="interiores.html" class="ativo" aria-current="page"><span>Interiores</span><i>02</i></a>
+    <a href="casa.html"><span>Casa</span><i>03</i></a>
+    <a href="habitar-sentidos.html"><span>Habitar Sentidos</span><i>04</i></a>
+    <a href="eventos.html"><span>Eventos</span><i>05</i></a>
+  </nav>
 </section>
 
-<!-- ================================================================ detalhe -->
-<section class="detalhe">
-  <div class="detalhe-grade">
-    <div class="detalhe-frase"><i class="traco" aria-hidden="true"></i><h2>O detalhe é o que faz o espaço ser seu.</h2></div>
-    <div class="detalhe-texto">
+<!-- ================================================================ letreiro -->
+<div class="letreiro" aria-hidden="true"><div class="letreiro-faixa"><span>Interiores</span><i></i><span>Mobiliário sob medida</span><i></i><span>Tecidos</span><i></i><span>Pedras</span><i></i><span>Iluminação</span><i></i><span>Arte</span><i></i><span>Curadoria</span><i></i><span>Interiores</span><i></i><span>Mobiliário sob medida</span><i></i><span>Tecidos</span><i></i><span>Pedras</span><i></i><span>Iluminação</span><i></i><span>Arte</span><i></i><span>Curadoria</span><i></i></div></div>
+
+<!-- ================================================================ manifesto (foto presa, texto por cima) -->
+<section class="manifesto" id="manifesto">
+  <div class="manifesto-fundo"><img src="img/bastidores-7.jpg" alt="" loading="lazy" decoding="async" width="1433" height="1098"></div>
+  <div class="manifesto-corpo">
+    <p class="rotulo rotulo--so">O que acreditamos</p>
+    <h2 class="manifesto-frase">O detalhe é o que faz o espaço <em>ser seu.</em></h2>
+    <div class="manifesto-colunas">
       <p>Nos interiores, a escolha de cada material, tecido, pedra e peça de mobiliário define o clima do ambiente. Trabalhamos com uma curadoria de fornecedores e artistas para compor espaços que unem conforto e presença.</p>
       <p>Desenvolvemos também projetos de mobiliário sob medida, desenhados para o lugar e para quem vai usá-los.</p>
-      <dl class="ficha">
-        <div><dt>Para quem</dt><dd>Residências, escritórios, lojas e espaços de hospitalidade.</dd></div>
-        <div><dt>Entregas</dt><dd>Conceito, paleta de materiais, projeto de mobiliário sob medida, iluminação e decoração.</dd></div>
-        <div><dt>Diferencial</dt><dd>Curadoria de arte e design autoral, com peças de artistas da galeria.</dd></div>
-        <div><dt>Onde</dt><dd>São Paulo - SP.</dd></div>
-      </dl>
     </div>
   </div>
 </section>
 
-<!-- ================================================================ pontos -->
-<section class="pontos">
-  <div class="cabeca"><div><p class="rotulo rotulo--so">O que compõe</p><h2>Cada ambiente,<br>peça por peça</h2></div></div>
-  <div class="pontos-grade">
-    <article class="ponto"><i>01</i><h3>Materiais</h3><p>Amostras na mesa, combinadas à luz do lugar, antes de qualquer decisão.</p></article>
-    <article class="ponto"><i>02</i><h3>Mobiliário</h3><p>Peças sob medida e seleção de design autoral, pensadas para o uso real.</p></article>
-    <article class="ponto"><i>03</i><h3>Arte</h3><p>Obras e objetos escolhidos com a galeria para dar alma ao ambiente.</p></article>
-  </div>
+<!-- ================================================================ indice -->
+<section class="indice">
+  <div class="cabeca"><div><p class="rotulo rotulo--so">Em resumo</p><h2>O essencial</h2></div></div>
+  <ol class="indice-lista">
+    <li><i>01</i><b>Para quem</b><span>Residências, escritórios, lojas e espaços de hospitalidade.</span></li>
+    <li><i>02</i><b>Entregas</b><span>Conceito, paleta de materiais, projeto de mobiliário sob medida, iluminação e decoração.</span></li>
+    <li><i>03</i><b>Diferencial</b><span>Curadoria de arte e design autoral, com peças de artistas da galeria.</span></li>
+    <li><i>04</i><b>Onde</b><span>São Paulo - SP.</span></li>
+  </ol>
 </section>
 
-<!-- ================================================================ galeria da pagina (mesmo mosaico e visualizador dos bastidores) -->
+<!-- ================================================================ momentos (trilha horizontal) -->
+<section class="momentos">
+  <div class="cabeca">
+    <div><p class="rotulo rotulo--so">O que compõe</p><h2>Cada ambiente,<br>peça por peça</h2></div>
+    <p class="dica">Arraste para o lado <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></p>
+  </div>
+  <div class="trilha" id="trilha">
+    <article class="momento"><img src="img/bastidores-5.jpg" alt="" loading="lazy" decoding="async" width="1433" height="1098"><i>01</i><h3>Materiais</h3><p>Amostras na mesa, combinadas à luz do lugar, antes de qualquer decisão.</p></article>
+    <article class="momento"><img src="img/bastidores-7.jpg" alt="" loading="lazy" decoding="async" width="1433" height="1098"><i>02</i><h3>Mobiliário</h3><p>Peças sob medida e seleção de design autoral, pensadas para o uso real.</p></article>
+    <article class="momento"><img src="img/casa.jpg" alt="" loading="lazy" decoding="async" width="1600" height="865"><i>03</i><h3>Arte</h3><p>Obras e objetos escolhidos com a galeria para dar alma ao ambiente.</p></article>
+    <article class="momento momento--fim"><i>Vamos conversar</i><h3>Quer um ambiente com a sua cara?</h3><p>Mande fotos do espaço e as suas referências. Começamos pela paleta de materiais.</p><a class="chamada chamada--pequena" href="index.html#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Falar com a BE.GALERIA</span></a></article>
+  </div>
+  <div class="trilha-barra" aria-hidden="true"><i></i></div>
+</section>
+
+<!-- ================================================================ colagem (mesmo visualizador dos bastidores) -->
 <section class="bastidores pagina-galeria" id="imagens">
   <div class="cabeca">
     <div><p class="rotulo rotulo--so">Em imagens</p><h2>Materiais, luz e peças</h2></div>
     <p class="bastidores-nota">Abra qualquer foto para ver em tamanho grande.</p>
   </div>
-  <div class="mosaico" id="mosaico">
-    <button type="button" class="peca peca--grande" data-legenda="Escolha de materiais"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>01</i>Escolha de materiais</span></button>
-    <button type="button" class="peca" data-legenda="Projeto no tablet"><img src="img/heroi-2.webp" alt="Dois profissionais olhando um projeto num tablet, num interior claro" loading="lazy" decoding="async" width="1770" height="896"><span class="peca-legenda"><i>02</i>Projeto no tablet</span></button>
-    <button type="button" class="peca" data-legenda="Atendimento personalizado"><img src="img/bastidores-7.jpg" alt="Dupla trabalhando numa mesa de mármore diante de uma janela com persianas" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>03</i>Atendimento personalizado</span></button>
+  <div class="colagem" id="mosaico">
+    <button type="button" class="peca colagem-a" data-legenda="Escolha de materiais"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>01</i>Escolha de materiais</span></button>
+    <button type="button" class="peca colagem-b" data-legenda="Projeto no tablet"><img src="img/heroi-2.webp" alt="Dois profissionais olhando um projeto num tablet, num interior claro" loading="lazy" decoding="async" width="1770" height="896"><span class="peca-legenda"><i>02</i>Projeto no tablet</span></button>
+    <button type="button" class="peca colagem-c" data-legenda="Atendimento personalizado"><img src="img/bastidores-7.jpg" alt="Dupla trabalhando numa mesa de mármore diante de uma janela com persianas" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>03</i>Atendimento personalizado</span></button>
+    <p class="colagem-vertical" aria-hidden="true">Materiais, luz e peças</p>
   </div>
+  <div class="trilha-barra" aria-hidden="true"><i></i></div>
 </section>
 
 <dialog class="visor" id="visor" aria-label="Foto em tamanho grande">
@@ -102,13 +125,24 @@
 </dialog>
 
 <!-- ================================================================ proximo espaco -->
-<section class="proximo">
-  <a class="proximo-link" href="casa.html">
+<section class="proximo2">
+  <a href="casa.html" aria-label="Próximo espaço: Casa BE Galeria">
     <img src="img/casa.jpg" alt="" loading="lazy" decoding="async" width="1600" height="865">
-    <div><p class="rotulo rotulo--so">Próximo espaço</p><h2>Casa BE Galeria</h2></div>
-    <span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span>
+    <span class="proximo2-numero" aria-hidden="true">03</span>
+    <div>
+      <p class="rotulo rotulo--so">Próximo espaço</p>
+      <h2>Casa BE Galeria</h2>
+      <span class="chamada"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Abrir</span></span>
+    </div>
   </a>
 </section>
+<nav class="outros" aria-label="Todos os espaços">
+  <a href="arquitetura.html"><i>01</i>Projetos de arquitetura</a>
+  <a href="interiores.html" class="ativo" aria-current="page"><i>02</i>Design de interiores</a>
+  <a href="casa.html"><i>03</i>Casa BE Galeria</a>
+  <a href="habitar-sentidos.html"><i>04</i>Habitar Sentidos</a>
+  <a href="eventos.html"><i>05</i>Eventos &amp; experiências</a>
+</nav>
 </main>
 
 <!-- ================================================================ experiencia -->

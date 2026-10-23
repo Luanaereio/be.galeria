@@ -2,6 +2,7 @@
    1. a barra ganha fundo depois da abertura;
    2. o menu do celular abre e fecha;
    3. o item do menu acende conforme a secao visivel; 3b. o slide da abertura; 3c. o visualizador dos bastidores;
+   3d. as trilhas horizontais das paginas dos espacos;
    4. os blocos entram em cena ao rolar. */
 (function () {
   'use strict';
@@ -138,8 +139,42 @@
     }, { passive: true });
   }
 
+  /* 3d. trilhas horizontais das paginas dos espacos (momentos e, no celular, a colagem): barra de progresso e
+     arrastar com o mouse (no toque a rolagem nativa ja resolve). Um clique depois de arrastar nao conta. */
+  Array.prototype.forEach.call(document.querySelectorAll('.trilha, .colagem'), function (t) {
+    var barra = t.parentElement.querySelector('.trilha-barra i');
+    function medir() {
+      var max = t.scrollWidth - t.clientWidth;
+      if (!barra) return;
+      var parte = max > 0 ? t.clientWidth / t.scrollWidth : 1;
+      var pos = max > 0 ? t.scrollLeft / max : 0;
+      barra.style.width = (parte * 100) + '%';
+      barra.style.transform = 'translateX(' + (pos * (1 / parte - 1) * 100) + '%)';
+    }
+    t.addEventListener('scroll', medir, { passive: true });
+    window.addEventListener('resize', medir);
+    medir();
+    var x0 = null, s0 = 0, moveu = false;
+    t.addEventListener('pointerdown', function (ev) {
+      if (ev.pointerType !== 'mouse' || t.scrollWidth <= t.clientWidth) return;
+      x0 = ev.clientX; s0 = t.scrollLeft; moveu = false;
+    });
+    window.addEventListener('pointermove', function (ev) {
+      if (x0 === null) return;
+      var dx = ev.clientX - x0;
+      if (!moveu && Math.abs(dx) > 5) { moveu = true; t.classList.add('arrastando'); }
+      if (moveu) t.scrollLeft = s0 - dx;
+    });
+    window.addEventListener('pointerup', function () {
+      if (x0 === null) return;
+      x0 = null;
+      window.setTimeout(function () { t.classList.remove('arrastando'); moveu = false; }, 50);
+    });
+    t.addEventListener('click', function (ev) { if (moveu) { ev.preventDefault(); ev.stopPropagation(); } }, true);
+  });
+
   /* 4. entrada em cena */
-  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .peca, .experiencia-texto, .pilula, .capa-texto, .capa-foto, .detalhe-frase, .detalhe-texto, .ponto, .proximo-link');
+  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .peca, .experiencia-texto, .pilula, .manifesto-frase, .manifesto-colunas, .indice-lista li, .momento, .outros');
   Array.prototype.forEach.call(blocos, function (el, i) { el.classList.add('sobe'); el.style.transitionDelay = (i % 5) * 70 + 'ms'; });
   if (calmo || !('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(blocos, function (el) { el.classList.add('visivel'); });
