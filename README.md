@@ -6,8 +6,8 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
 ## Arquivos
 
 - `index.html`: a pagina (abertura, Nossos espacos, Sobre, Viva essa experiencia, rodape).
-- `estilo.css`: o visual. Fundo onix, Outfit em caixa alta leve nos titulos, Inter nos textos, La Belle Aurore no
-  manuscrito do bloco Sobre e um unico acento: o degrade magenta > laranja (anel do selo, tracinhos, linha do rodape).
+- `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos), Sacramento no manuscrito do
+  bloco Sobre e um unico acento: o degrade magenta > laranja (anel do selo, tracinhos, linha do rodape).
 - `script.js`: barra com fundo ao rolar, menu do celular, item ativo do menu e entrada em cena dos blocos.
 - `img/heroi.webp` e `img/heroi-cel.webp`: a foto da abertura (a que ela subiu no repositorio), em webp para PC e celular.
 - `img/espaco-*.jpg`, `img/sobre.jpg`, `img/folhas.jpg`: **provisorias**, recortadas do proprio mockup e por isso
