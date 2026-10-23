@@ -48,7 +48,6 @@
       <p class="abertura-lede">A BE.GALERIA é um espaço onde arte, cultura, moda, negócios e pessoas se encontram.</p>
       <a class="chamada" href="#galeria"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça nossa galeria</span></a>
     </div>
-    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
   </div>
 
   <div class="slide claro" data-slide="2" role="group" aria-roledescription="slide" aria-label="2 de 3" aria-hidden="true">
@@ -63,7 +62,6 @@
       <p class="abertura-lede">Da planta ao detalhe final, criamos espaços com identidade, pensados para o jeito de viver de cada cliente.</p>
       <a class="chamada" href="#galeria" tabindex="-1"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Conheça os projetos</span></a>
     </div>
-    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
   </div>
 
   <div class="slide claro" data-slide="3" role="group" aria-roledescription="slide" aria-label="3 de 3" aria-hidden="true">
@@ -78,7 +76,6 @@
       <p class="abertura-lede">Eventos, experiências e conversas que aproximam quem cria, quem vive e quem inspira.</p>
       <a class="chamada" href="#contato" tabindex="-1"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Viva a experiência</span></a>
     </div>
-    <div class="selo" aria-hidden="true"><div class="selo-anel"></div><div class="selo-miolo"><b>BE.</b>GALERIA</div></div>
   </div>
 
   <div class="abertura-paginas" id="paginas" role="tablist" aria-label="Escolher o destaque">
@@ -131,6 +128,38 @@
     <a class="chamada chamada--pequena" href="#contato"><span class="chamada-circulo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M13 5l7 7-7 7"/></svg></span><span>Saiba mais</span></a>
   </div>
 </section>
+
+<!-- ================================================================ bastidores -->
+<!-- (23/10) sete fotos dela num mosaico editorial: pecas de tamanhos diferentes, legenda numerada ao passar o mouse
+     (sempre visivel no toque) e clique abre a foto grande no visualizador, com setas e teclado. -->
+<section class="bastidores" id="bastidores">
+  <div class="cabeca">
+    <div>
+      <p class="rotulo rotulo--so">Bastidores</p>
+      <h2>Por trás de<br>cada projeto</h2>
+    </div>
+    <p class="bastidores-nota">Reuniões, escolhas de materiais, obra e os encontros que acontecem no caminho. Abra qualquer foto para ver em tamanho grande.</p>
+  </div>
+  <div class="mosaico" id="mosaico">
+    <button type="button" class="peca peca--grande" data-legenda="Revisão de projeto com o cliente"><img src="img/bastidores-1.jpg" alt="Equipe e cliente analisando uma prancha de projeto no sofá" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>01</i>Revisão de projeto com o cliente</span></button>
+    <button type="button" class="peca peca--alta" data-legenda="Acompanhamento de obra"><img src="img/bastidores-2.jpg" alt="Profissional conferindo o quadro elétrico numa obra envidraçada" loading="lazy" decoding="async" width="1147" height="1371"><span class="peca-legenda"><i>02</i>Acompanhamento de obra</span></button>
+    <button type="button" class="peca" data-legenda="Perspectiva de um projeto residencial"><img src="img/bastidores-3.jpg" alt="Vista aérea de uma casa com piscina e jardim iluminados" loading="lazy" decoding="async" width="1536" height="1024"><span class="peca-legenda"><i>03</i>Perspectiva de um projeto residencial</span></button>
+    <button type="button" class="peca" data-legenda="Brinde na Casa BE Galeria"><img src="img/bastidores-4.jpg" alt="Convidados brindando com espumante num salão de design" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>04</i>Brinde na Casa BE Galeria</span></button>
+    <button type="button" class="peca" data-legenda="Escolha de materiais"><img src="img/bastidores-5.jpg" alt="Mesa de mármore com amostras de tecidos, pedras e acabamentos" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>05</i>Escolha de materiais</span></button>
+    <button type="button" class="peca peca--media" data-legenda="Equipe em criação"><img src="img/bastidores-6.jpg" alt="Equipe reunida em volta de uma mesa de madeira com notebook e cadernos" loading="lazy" decoding="async" width="1147" height="1371"><span class="peca-legenda"><i>06</i>Equipe em criação</span></button>
+    <button type="button" class="peca peca--media" data-legenda="Atendimento personalizado"><img src="img/bastidores-7.jpg" alt="Dupla trabalhando numa mesa de mármore diante de uma janela com persianas" loading="lazy" decoding="async" width="1433" height="1098"><span class="peca-legenda"><i>07</i>Atendimento personalizado</span></button>
+  </div>
+</section>
+
+<dialog class="visor" id="visor" aria-label="Foto em tamanho grande">
+  <button type="button" class="visor-fechar" id="visorFechar" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button type="button" class="visor-seta visor-seta--esq" id="visorAnterior" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <figure class="visor-figura">
+    <img id="visorImagem" src="" alt="">
+    <figcaption id="visorLegenda"></figcaption>
+  </figure>
+  <button type="button" class="visor-seta visor-seta--dir" id="visorProxima" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+</dialog>
 
 <!-- ================================================================ experiencia -->
 <div id="servicos" class="ancora" aria-hidden="true"></div>

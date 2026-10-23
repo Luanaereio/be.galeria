@@ -1,7 +1,7 @@
 /* BE.GALERIA (23/10/2026): o pouco de comportamento da pagina.
    1. a barra ganha fundo depois da abertura;
    2. o menu do celular abre e fecha;
-   3. o item do menu acende conforme a secao visivel; 3b. o slide da abertura;
+   3. o item do menu acende conforme a secao visivel; 3b. o slide da abertura; 3c. o visualizador dos bastidores;
    4. os blocos entram em cena ao rolar. */
 (function () {
   'use strict';
@@ -96,8 +96,50 @@
     agendar();
   }
 
+  /* 3c. bastidores: clique na peca abre a foto grande; setas, teclado e clique fora fecham ou trocam */
+  var visor = document.getElementById('visor');
+  var pecas = Array.prototype.slice.call(document.querySelectorAll('#mosaico .peca'));
+  var visorImagem = document.getElementById('visorImagem');
+  var visorLegenda = document.getElementById('visorLegenda');
+  var atualVisor = 0;
+  function mostrarFoto(n) {
+    if (!pecas.length) return;
+    atualVisor = (n + pecas.length) % pecas.length;
+    var img = pecas[atualVisor].querySelector('img');
+    visorImagem.src = img.getAttribute('src');
+    visorImagem.alt = img.alt;
+    visorLegenda.textContent = String(atualVisor + 1).padStart(2, '0') + '  ' + (pecas[atualVisor].getAttribute('data-legenda') || '');
+  }
+  if (visor && pecas.length) {
+    pecas.forEach(function (b, i) {
+      b.addEventListener('click', function () {
+        mostrarFoto(i);
+        if (typeof visor.showModal === 'function') visor.showModal(); else visor.setAttribute('open', '');
+        document.body.classList.add('travado');
+      });
+    });
+    var fecharVisor = function () { if (visor.open) visor.close(); document.body.classList.remove('travado'); };
+    document.getElementById('visorFechar').addEventListener('click', fecharVisor);
+    document.getElementById('visorAnterior').addEventListener('click', function () { mostrarFoto(atualVisor - 1); });
+    document.getElementById('visorProxima').addEventListener('click', function () { mostrarFoto(atualVisor + 1); });
+    visor.addEventListener('click', function (ev) { if (ev.target === visor) fecharVisor(); });   // clique no fundo
+    visor.addEventListener('close', function () { document.body.classList.remove('travado'); });
+    document.addEventListener('keydown', function (ev) {
+      if (!visor.open) return;
+      if (ev.key === 'ArrowRight') mostrarFoto(atualVisor + 1);
+      if (ev.key === 'ArrowLeft') mostrarFoto(atualVisor - 1);
+    });
+    var toqueVisorX = null;
+    visor.addEventListener('touchstart', function (ev) { toqueVisorX = ev.touches[0].clientX; }, { passive: true });
+    visor.addEventListener('touchend', function (ev) {
+      if (toqueVisorX === null) return;
+      var dx = ev.changedTouches[0].clientX - toqueVisorX; toqueVisorX = null;
+      if (Math.abs(dx) > 50) mostrarFoto(atualVisor + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+  }
+
   /* 4. entrada em cena */
-  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .experiencia-texto, .pilula');
+  var blocos = document.querySelectorAll('.cabeca, .cartao, .sobre-texto, .sobre-foto, .peca, .experiencia-texto, .pilula');
   Array.prototype.forEach.call(blocos, function (el, i) { el.classList.add('sobe'); el.style.transitionDelay = (i % 5) * 70 + 'ms'; });
   if (calmo || !('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(blocos, function (el) { el.classList.add('visivel'); });

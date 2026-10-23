@@ -5,9 +5,13 @@ puros, sem build. Feito a partir do mockup aprovado em 23/10/2026.
 
 ## Arquivos
 
-- `index.html`: a pagina (abertura, Nossos espacos, Sobre, Viva essa experiencia, rodape).
+- `index.html`: a pagina (abertura em slide, Nossos espacos, Sobre, Bastidores, Viva essa experiencia, rodape).
+- Bastidores: mosaico editorial com as sete fotos dela (`img/bastidores-1.jpg` a `-7.jpg`, ate 1600 px), legenda
+  numerada ao passar o mouse (sempre visivel no toque) e visualizador em tamanho grande (`<dialog>`, setas, teclado e
+  arrastar). As legendas estao no `data-legenda` de cada peca.
 - `estilo.css`: o visual. Fundo onix, Montserrat em tudo (caixa alta leve nos titulos) e um unico acento: o degrade
-  magenta > laranja (anel do selo, tracinhos, linha do rodape). O manuscrito do bloco Sobre esta gravado na foto.
+  magenta > laranja (tracinhos, numeros das legendas, linha do rodape). O manuscrito do bloco Sobre esta gravado na
+  foto. O selo redondo da abertura saiu em 23/10 a pedido dela.
 - `script.js`: barra com fundo ao rolar, menu do celular, item ativo do menu e entrada em cena dos blocos.
 - `img/heroi.webp`, `img/heroi-2.webp`, `img/heroi-3.webp` (e as `-cel.webp` para celular): as tres fotos da abertura,
   que e um slide (troca a cada 6,5 s, para com o mouse em cima, tracinhos clicaveis, arrastar no celular). Cada foto
