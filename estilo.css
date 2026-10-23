@@ -371,8 +371,12 @@ body.travado { overflow: hidden; }   /* menu do celular aberto ou visualizador d
     position: fixed; inset: 0; margin: 0; padding: 110px var(--margem) 40px;
     background: rgba(11, 11, 12, 0.97);
     z-index: -1;
+    overflow-y: auto; overscroll-behavior: contain;   /* o dedo no painel nao rola a pagina por baixo (iPhone) */
   }
-  .topo.menu-aberto { z-index: 20; }
+  /* (23/10) com o menu aberto a barra fica SEM backdrop-filter e sem fundo: o desfoque da barra rolada virava o bloco
+     de referencia do painel fixo, que encolhia para a altura da barra e deixava o texto do menu solto sobre a pagina
+     ("se desco some o fundo preto"). Mesma licao do AM Global. */
+  .topo.menu-aberto { z-index: 20; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom-color: transparent; }
   .topo.menu-aberto .menu.aberto { z-index: 15; }
   /* a marca e o botao de fechar ficam ACIMA do painel, senao o painel os apaga */
   .topo.menu-aberto .marca, .topo.menu-aberto .hamburguer { position: relative; z-index: 16; }
