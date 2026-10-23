@@ -1,7 +1,7 @@
 /* BE.GALERIA (23/10/2026): site de uma pagina seguindo o mockup dela. Fundo onix, Montserrat em tudo (caixa alta
-   leve nos titulos, como no mockup; a 1a versao usava Outfit e ela estranhou), um manuscrito fino e inclinado
-   (Sacramento) no bloco Sobre e UM acento: o degrade magenta > laranja, que aparece no anel do selo, no tracinho
-   das secoes e na linha do rodape. */
+   leve nos titulos, como no mockup; a 1a versao usava Outfit e ela estranhou) e UM acento: o degrade magenta >
+   laranja, que aparece no anel do selo, no tracinho das secoes e na linha do rodape. O manuscrito do bloco Sobre
+   vem gravado na propria foto dela (nao e texto). */
 :root {
   --onix: #0B0B0C;
   --carvao: #141416;
@@ -16,7 +16,6 @@
   --degrade: linear-gradient(90deg, var(--magenta), var(--laranja));
   --display: 'Montserrat', system-ui, sans-serif;
   --texto-fonte: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --mao: 'Allison', 'Segoe Script', cursive;
   --margem: clamp(20px, 7.4vw, 108px);
   --suave: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -150,10 +149,10 @@ p { margin: 0; }
 
 /* ============================================================ sobre */
 .sobre { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); min-height: 440px; background: var(--onix); }
+/* a frase manuscrita esta gravada na foto, no canto esquerdo: a foto ancora a esquerda e nao leva veu */
 .sobre-foto { position: relative; overflow: hidden; background: #0e1410; }
-.sobre-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; min-height: 380px; }
-.sobre-foto::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8, 10, 8, 0.86) 0%, rgba(8, 10, 8, 0.45) 36%, rgba(8, 10, 8, 0) 60%); }
-.manuscrito { position: absolute; left: var(--margem); bottom: 18%; font-family: var(--mao); font-weight: 400; font-size: clamp(46px, 4.2vw, 66px); line-height: 0.98; color: #fff; transform: rotate(-8deg); transform-origin: left bottom; text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55); }
+.sobre-foto picture { display: block; height: 100%; }
+.sobre-foto img { width: 100%; height: 100%; object-fit: cover; object-position: 0% 50%; min-height: 380px; }
 .sobre-texto { padding: clamp(56px, 8vh, 96px) var(--margem) clamp(56px, 8vh, 96px) clamp(40px, 5vw, 80px); display: grid; align-content: center; gap: 0; }
 .sobre-texto .traco { margin-bottom: 22px; }
 .sobre-texto h2 { font-size: clamp(30px, 3vw, 40px); margin-bottom: 26px; }
@@ -229,8 +228,7 @@ p { margin: 0; }
   .cartao img { aspect-ratio: 4 / 3; }
 
   .sobre { grid-template-columns: 1fr; }
-  .sobre-foto img { min-height: 0; aspect-ratio: 4 / 3; }
-  .manuscrito { bottom: 12%; font-size: 46px; }
+  .sobre-foto img { min-height: 0; aspect-ratio: 4 / 3; height: auto; }
   .sobre-texto { padding: 48px var(--margem) 56px; }
 
   .experiencia { flex-direction: column; align-items: flex-start; gap: 26px; }

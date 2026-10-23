@@ -13,7 +13,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Allison&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/heroi.webp" imagesrcset="img/heroi-cel.webp 960w, img/heroi.webp 1778w" imagesizes="100vw">
 <link rel="stylesheet" href="estilo.css">
 </head>
@@ -76,9 +76,13 @@
 
 <!-- ================================================================ sobre -->
 <section class="sobre" id="sobre">
+  <!-- (23/10) a foto e dela e ja traz o manuscrito "Arte, conexoes, experiencias reais." gravado; por isso nao ha
+       texto em HTML por cima e o alt repete a frase. -->
   <div class="sobre-foto">
-    <img src="img/sobre.jpg" alt="Interior da galeria visto do jardim, com esculturas e vidro" loading="lazy" decoding="async" width="824" height="744">
-    <p class="manuscrito" aria-hidden="true">Arte,<br>conexões,<br>experiências<br>reais.</p>
+    <picture>
+      <source media="(max-width: 760px)" srcset="img/sobre-cel.jpg">
+      <img src="img/sobre.jpg" alt="Galeria envidraçada ao entardecer, com escultura e jardim de palmeiras. Na foto, a frase: Arte, conexões, experiências reais." loading="lazy" decoding="async" width="1649" height="954">
+    </picture>
   </div>
   <div class="sobre-texto">
     <i class="traco" aria-hidden="true"></i>
